@@ -2,7 +2,6 @@
 
 -   Graduanda em Bacharelado em Sistemas de Informação na Universidade Federal de Uberlândia (UFU)
 -   Estudando Java
--   Pronomes: ela/dela
 
 <div style="display: inline_block"><br>
   <img align="center" alt="Samira-PHP" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/php/php-original.svg">
