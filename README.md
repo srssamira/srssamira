@@ -1,6 +1,10 @@
-## Olá, me chamo Samira!
-
--   Graduanda em Bacharelado em Sistemas de Informação na Universidade Federal de Uberlândia (UFU)
+## Olá, me chamo Samira! É um prazer!
+-  🎓 Graduanda em Bacharelado em Sistemas de Informação na Universidade Federal de Uberlândia (UFU)
+  
+<div>
+  <img height=160 src="https://github-readme-stats.vercel.app/api?username=srssamira&theme=midnight-purple&show_icons=true" />
+  <img height=160 src="https://github-readme-stats.vercel.app/api/top-langs/?username=srssamira&layout=compact&theme=midnight-purple&show_icons=true" />
+</div>  
 
 <div style="display: inline_block"><br>
   <img align="center" alt="Samira-PHP" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/php/php-original.svg">
