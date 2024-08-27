@@ -2,9 +2,8 @@ public class App {
     public static void main(String[] args) {
 
         ContentSlotMachine[] slotMachine = ContentSlotMachine.values();
-        ManipulationSlotMachine manipulationSlotMachine = new ManipulationSlotMachine();
+        AppSystem appSystem = new AppSystem();
 
-        manipulationSlotMachine.sortValues();
-        manipulationSlotMachine.sumScore(slotMachine);
+        appSystem.playApp(slotMachine);
     }
 }
