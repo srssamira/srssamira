@@ -1,8 +1,14 @@
 public class ManipulationSlotMachine {
 
     private ContentSlotMachine[] slotMachine = ContentSlotMachine.values();
+    private int difficulty;
 
-    public void sortValues(int difficulty) {
+    public ManipulationSlotMachine(ContentSlotMachine[] slotMachine, int difficulty) {
+        this.slotMachine = slotMachine;
+        this.difficulty = difficulty;
+    }
+
+    public void sortValues() {
 
         ContentSlotMachine[] sortSlotMachine = new ContentSlotMachine[3];
 
@@ -13,12 +19,14 @@ public class ManipulationSlotMachine {
                 sortSlotMachine[subIndex] = slotMachine[random];
                 System.out.println(sortSlotMachine[subIndex].getName());
             }
-            sumSortSlotMachine += sumScore(sortSlotMachine, difficulty);
+            if (addBonus(sortSlotMachine, index) > 0) {
+                sumSortSlotMachine = addBonus(sortSlotMachine, index);
+            } else sumSortSlotMachine += sumScore(sortSlotMachine);
         }
         System.out.println(sumSortSlotMachine + " PONTOS");
     }
 
-    public int sumScore(ContentSlotMachine[] slotMachine, int difficulty) {
+    public int sumScore(ContentSlotMachine[] slotMachine) {
         int sum = 0;
         for (int index = 0; index < slotMachine.length; index++) {
             sum += slotMachine[index].getScore();
@@ -26,13 +34,21 @@ public class ManipulationSlotMachine {
         return sum;
     }
 
-//    public int addBonus(ContentSlotMachine[] slotMachine, int difficulty) {
-//        int sumAddBonus = 0;
-//        if ((slotMachine[0].getName().equalsIgnoreCase(slotMachine[1].getName()))
-//                && (slotMachine[1].getName().equalsIgnoreCase(slotMachine[2].getName()))) {
-//            sumAddBonus = (sumScore(slotMachine, difficulty)) * 100;
-//        }
-//        return sumAddBonus;
-//    }
+    public int addBonus(ContentSlotMachine[] slotMachine, int index) {
+
+        try {
+            while (index < slotMachine.length) {
+                for (int subIndex = index + 1; subIndex < slotMachine.length; subIndex++)
+                    if (slotMachine[index].getName().equalsIgnoreCase(slotMachine[subIndex].getName())
+                            && slotMachine[index + 1].getName().equalsIgnoreCase(slotMachine[subIndex + 1].getName())) {
+                        return sumScore(slotMachine) * 100;
+                    }
+                index++;
+            }
+        } catch (Exception e) {
+            System.out.println("---------------------");
+        }
+        return 0;
+    }
 }
 

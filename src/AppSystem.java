@@ -1,10 +1,15 @@
 public class AppSystem {
     ContentSlotMachine[] slotMachine = ContentSlotMachine.values();
-    ManipulationSlotMachine manipulationSlotMachine = new ManipulationSlotMachine();
     IO io;
 
-    public void playApp(ContentSlotMachine[] slotMachine) {
-        int difficulty = io.input("Escolha uma dificuldade de 1 a 3: ").nextInt();
-        manipulationSlotMachine.sortValues(difficulty);
+    public void initializeSystem(ContentSlotMachine[] slotMachine) {
+        int difficulty = io.input("NÍVEL DE DIFICULDADE:" +
+                "\n1 - FÁCIL ------------ (3 SLOTS)" +
+                "\n2 - MÉDIO ------------ (6 SLOTS)" +
+                "\n3 - DIFÍCIL ---------- (9 SLOTS)" +
+                "\n4 - MUITO DIFÍCIL ---- (12 SLOTS)").nextInt();
+        ManipulationSlotMachine manipulationSlotMachine = new ManipulationSlotMachine(slotMachine, difficulty);
+        manipulationSlotMachine.sortValues();
     }
+    
 }

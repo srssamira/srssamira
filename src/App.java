@@ -4,6 +4,6 @@ public class App {
         ContentSlotMachine[] slotMachine = ContentSlotMachine.values();
         AppSystem appSystem = new AppSystem();
 
-        appSystem.playApp(slotMachine);
+        appSystem.initializeSystem(slotMachine);
     }
 }
