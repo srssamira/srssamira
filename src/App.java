@@ -5,5 +5,6 @@ public class App {
         ManipulationSlotMachine manipulationSlotMachine = new ManipulationSlotMachine();
 
         manipulationSlotMachine.sortValues();
+        manipulationSlotMachine.sumScore(slotMachine);
     }
 }
